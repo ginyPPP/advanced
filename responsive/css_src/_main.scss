@@ -1,0 +1,163 @@
+.header{
+  height:60px;
+  border-bottom: 1px solid #ddd;
+  padding-top: 18px;
+  box-sizing: border-box;
+
+
+  .logo{
+    float:left;
+    font-family: 'Stardos Stencil', cursive;
+    font-size: 30px;
+    font-weight: 700;
+  }
+}
+
+.gnb{
+  float: right;
+  position: relative;
+  top: 8px;
+
+  &-list{
+
+    &-item{
+      float: left;
+      margin-left: 151px;
+
+    }
+
+    &-link{
+
+      font :{
+        family: 'Stardos Stencil', cursive;
+        size: 16px;
+        weight: 700;
+      }
+
+      color: #000;
+      text-decoration: none;
+
+      &:hover{
+        text-decoration: line-through;
+      }
+
+    }
+  }
+}
+
+.main-visual{
+
+  &-img{
+    display: block;
+    width: 100%;
+  }
+}
+
+.text-section{
+  >.inner-text{
+    height: 200px;
+    background: #ddd;
+  }
+  .def-list{
+    width: 286px;
+    height: 200px;
+    text-align: center;
+    padding: 50px 34px 0;
+    box-sizing: border-box;
+    float: left;
+    margin-right: 20px;
+
+    &:last-child{
+      margin-right: 0;
+    }
+    
+    &-title{
+      font-weight: 700;
+    }
+    &-data{
+      line-height:1.2;
+      margin-top:20px;
+      font:{
+        size: 13px;
+        weight: 300;
+
+      }
+    }
+  }
+
+}
+
+.list-visual{
+
+  &-list{
+    @extend %clearfix;
+
+    &-item{
+      float: left;
+
+      &:nth-child(1){ width: 50%;}
+      &:nth-child(2),
+      &:nth-child(3),
+      &:nth-child(4),
+      &:nth-child(5){ width: 25%;}
+    }
+    &-img{
+      display: block;
+      width: 100%;
+    }
+  }
+}
+
+.footer{
+  height: 60px;
+  border-top: 1px solid #ddd;
+  box-sizing: border-box;
+
+  &-address{
+    line-height: 60px;
+    text-align: center;
+  }
+}
+
+
+
+
+
+//tablet
+
+@media screen and (min-width: 768px) and (max-width: 1203px) {
+
+  .header{
+    background: lightblue;
+    padding:18px 20px 0;
+  }
+
+  .gnb-list-item{
+    margin-left: 44px;
+  }
+}
+
+
+//smart phone
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .header{
+    background:lightcoral;
+
+  }
+
+  .gnb{
+    float: none;
+    //position: static;  => 포지션 기본
+    position: static;
+    //display: none;
+
+    &-list{
+      &-item{
+        margin-left: 0;
+        float: none;
+      }
+    }
+
+  }
+}
