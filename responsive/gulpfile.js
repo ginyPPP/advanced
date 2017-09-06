@@ -3,38 +3,28 @@
  */
 
 
-    // º¯¼ö ¼±¾ğ = require ('¸ğµâÀÌ¸§);
+    // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ = require ('ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½);
 var gulp  = require ('gulp');
 var livereload = require('gulp-livereload');
 var include = require('gulp-include');
 var sass = require('gulp-sass');
 var watch = require('gulp-watch');
 var sourcemaps = require('gulp-sourcemaps');
+var concat = require('gulp-concat');
 
 /*
-gulp.task( task ÀÌ¸§,  ÇÔ¼ö/ÀÍ¸íÇÔ¼ö);
+gulp.task( task ï¿½Ì¸ï¿½,  ï¿½Ô¼ï¿½/ï¿½Í¸ï¿½ï¿½Ô¼ï¿½);
 */
 
-gulp.task('hello',function(){
-  return console.log('Hello World!');
-});
 
-gulp.task('hello1',function(){
-  return console.log('Hello World!');
-});
-
-gulp.task('hello2',function(){
-  return console.log('Hello World!');
-});
-
-//default ¸¦ »ç¿ëÇÏ¿© °°Àº °ÍÀ» ¿©·¯¹ø ½ÇÇàÇÏ´Â °æ¿ìÀÇ ¹æ¹ı
-//gulp¸¦ ½ÇÇàÇÏ¸é default ·Î hello task ½ÇÇà
+//default ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+//gulpï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ default ï¿½ï¿½ hello task ï¿½ï¿½ï¿½ï¿½
 //gulp.task('default', ['hello','hello1','hello2']);
 
 
-
-//»õ·Î °íÄ§----f5 Å°¸¦ ´©¸£Áö ¾Ê°í ÀÛ¾÷ÇÏ·Á°í ÇÒ ¶§---2°¡Áö ¹æ¹ı
-// 1¹øÂ°
+//
+//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä§----f5 Å°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê°ï¿½ ï¿½Û¾ï¿½ï¿½Ï·ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½---2ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+// 1ï¿½ï¿½Â°
 //gulp.task('livereload', function(){
 //    gulp.src('less/*.less')
 //        .pipe(include())
@@ -43,10 +33,31 @@ gulp.task('hello2',function(){
 //
 //});
 
-//2¹øÂ° ¹æ¹ı
+//2ï¿½ï¿½Â° ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä§ ï¿½ï¿½ï¿½
 gulp.task('livereload', function(){
   gulp.src(['html/*', 'css/*', 'js/*','*'])
-      .pipe( livereload());   // pipe() ÇÔ¼ö´Â ¸ğµâÀÇ ±â´ÉÀ» ½ÇÇàÇØ ÁÖ´Â ÇÔ¼öÀÌ´Ù.
+      .pipe( livereload());   // pipe() ï¿½Ô¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½Ô¼ï¿½ï¿½Ì´ï¿½.
+});
+
+
+
+// header, footer ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ğ¸ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½
+//include ï¿½ï¿½ html ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì´ï¿½ ï¿½ï¿½ï¿½
+gulp.task('include', function(){
+  gulp.src("html_src/*.html")
+      .pipe(include())
+      .on('error', console.log)
+      .pipe(gulp.dest("html/"));   // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ html ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
+});
+
+//sass  ï¿½ï¿½ï¿½ï¿½
+gulp.task('sass', function(){
+  return gulp.src('css_src/*.scss')//src---ï¿½ï¿½ï¿½ï¿½
+      .pipe(sourcemaps.init())
+      .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
+      .pipe(sourcemaps.write())
+      .pipe(gulp.dest('css/'));  // dest ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  =>cssï¿½ï¿½ï¿½ï¿½ ï¿½Æ·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+
 });
 
 gulp.task('watch',function(){
@@ -54,30 +65,30 @@ gulp.task('watch',function(){
   gulp.watch('*', ['livereload']);
   gulp.watch('html_src/**', ['include', 'livereload']);
   gulp.watch('css_src/**', ['sass', 'livereload']);
+  gulp.watch('js_src/**', ['jsconcat', 'livereload']);
 
 });
 
-// header, footer °øÅë ¿µ¿ª ºĞ¸®ÇÏ´Â ¹æ¹ı
-//include ´Â html ¿¡¼­ ¾²ÀÌ´Â ¾ğ¾î
-gulp.task('include', function(){
-  gulp.src("html_src/*.html")
-      .pipe(include())
-      .on('error', console.log)
-      .pipe(gulp.dest("html/"));   // ¸ñÀûÁö´Â Æú´õ¶ó¼­ html ¸¸ ¾´´Ù.
-});
 
-//sass  ½ÇÇà
-gulp.task('sass', function(){
-  return gulp.src('css_src/*.scss')//src---¿øº»
+
+
+
+//concat ï¿½ï¿½ï¿½ï¿½ - ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï³ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï·ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½
+
+
+gulp.task('responsiveMenu', function() {
+  return gulp.src('js_src/*.js')
       .pipe(sourcemaps.init())
-      .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
+      .pipe(concat('function.js'))
       .pipe(sourcemaps.write())
-      .pipe(gulp.dest('css/'));  // dest ´Â º¸¿©Áö´Â °÷
-
+      .pipe(gulp.dest('js/'));
 });
 
 
-gulp.task('default', ['livereload','include','sass','watch']);
+
+gulp.task('jsconcat',['responsiveMenu']);   //ì—¬ëŸ¬ê°œì˜ taskë¥¼ ì‹¤í–‰ í•  ë•Œ ëª¨ì•„ì„œ ì“´ë‹¤.
+
+gulp.task('default', ['livereload','include','sass', 'jsconcat','watch']);
 
 
 

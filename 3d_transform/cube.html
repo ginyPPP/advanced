@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cube</title>
+  <style>
+    .container {
+      width: 200px;
+      height: 200px;
+      position: relative;
+      perspective: 1000px;
+      margin: 200px auto;
+    }
+
+    #cube {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      transform-style: preserve-3d;
+      transition: transform 1s;
+    }
+
+    #cube figure {
+      color:#fff;
+      font-size: 50px;
+      margin: 0;
+      width: 196px;
+      height: 196px;
+      display: block;
+      position: absolute;
+      border: 2px solid black;
+      opacity: 0.5;
+    }
+    #cube .front  {background: green; transform: rotateY(   0deg ) translateZ(100px); }
+    #cube .back   {background: greenyellow;   transform: rotateX( 180deg ) translateZ(100px); }
+    #cube .right  {background: plum; transform: rotateY(  90deg ) translateZ(100px); }
+    #cube .left   {background: gold; transform: rotateY( -90deg ) translateZ(100px); }
+    #cube .top    {background: deepskyblue; transform: rotateX(  90deg ) translateZ(100px); }
+    #cube .bottom {background: tomato; transform: rotateX( -90deg ) translateZ(100px); }
+
+
+    #cube.show-front  {transform:translateZ(-100px)  rotateY(   0deg ) ; }
+    #cube.show-back   {transform:translateZ(-100px)  rotateX( -180deg ) ; }
+    #cube.show-right  {transform:translateZ(-100px)  rotateY( -90deg ) ; }
+    #cube.show-left   {transform:translateZ(-100px)  rotateY( 90deg ) ; }
+    #cube.show-top    {transform:translateZ(-100px)  rotateX(  -90deg ) ; }
+    #cube.show-bottom {transform:translateZ(-100px)  rotateX( 90deg ) ; }
+
+  </style>
+
+  <script src="lib/jquery-3.2.1.min.js"></script>
+  <script>
+    $(function(){
+      $('.btn1').on('click',function(){
+        $('#cube').attr('class','show-front');
+      });
+      $('.btn2').on('click',function(){
+        $('#cube').attr('class','show-back');
+      });
+      $('.btn3').on('click',function(){
+        $('#cube').attr('class','show-right');
+      });
+      $('.btn4').on('click',function(){
+        $('#cube').attr('class','show-left');
+      });
+      $('.btn5').on('click',function(){
+        $('#cube').attr('class','show-top');
+      });
+      $('.btn6').on('click',function(){
+        $('#cube').attr('class','show-bottom');
+      });
+
+    });
+  </script>
+
+</head>
+<body>
+
+<section class="container">
+  <div id="cube">
+    <figure class="front">1</figure>
+    <figure class="back">2</figure>
+    <figure class="right">3</figure>
+    <figure class="left">4</figure>
+    <figure class="top">5</figure>
+    <figure class="bottom">6</figure>
+  </div>
+</section>
+
+
+
+  <div>
+    <button type="button" class="btn1">show1</button>
+    <button type="button" class="btn2">show2</button>
+    <button type="button" class="btn3">show3</button>
+    <button type="button" class="btn4">show4</button>
+    <button type="button" class="btn5">show5</button>
+    <button type="button" class="btn6">show6</button>
+
+  </div>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> video tag</title>
+  <script src="js/lib/jquery-3.2.1.min.js"></script>
+  <style>
+    .video{
+      position: absolute;
+      left: 0;
+      top:0;
+      transition: all 1s ease-out;
+    }
+
+    .video:hover{
+      width: 80%;
+      height: 80%;
+    }
+
+
+
+  </style>
+  <script>
+    $(function(){
+     /*
+      document.getElementById('video') : Javascript D.O.M
+
+      $('#video') : jQuery D.O.M
+
+      $('#video')[0] : Javascript D.O.M
+
+      => document.getElementById('video'), $('#video')[0] : 두 가지는 같은 D.O.M
+
+      */
+
+      $('.video').on('mouseenter',function(){
+        //play() : HTML5 video API
+        $('.video')[0].play();
+      });
+
+      $('.video').on('mouseleave',function(){
+        //pause() : HTML5 video API
+        $('.video')[0].pause();
+      });
+
+    });
+  </script>
+</head>
+<body>
+
+
+
+<video class="video" width="560" height="315" controls>
+  <source src="src/video3.mp4" type="video/mp4" />
+</video>
+
+
+
+</body>
+</html>

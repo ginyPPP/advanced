@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="css/reset.css" />
+  <style>
+    html, body{
+      height: 100%;
+    }
+
+    .video-wrap{
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+    .video{
+      height:1200px;
+      width: 2130px;;
+      position:absolute;
+      top: 50%;
+      left: 50%;
+
+      /*top: -200px;*/
+      /*left: -550px;*/
+
+      /*top: 0;*/
+      /*left: 0;*/
+    }
+    .dimmed{
+      position: absolute;
+      top: 0;
+      left:0;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      opacity: 0.6;
+    }
+
+
+
+
+
+
+
+    .text{
+      width: 600px;
+      margin: 0 auto;
+      font-size: 20px;
+      line-height: 2;
+      position:relative;
+      z-index: 10;
+      color: #fff;
+      /*top: 0;*/
+      /*left:0;*/
+    }
+    .bg-video{
+      width: 100%;
+      height: 100%;
+      position:fixed;
+      top:0;
+      left: 0;
+      z-index: 0;
+
+    }
+
+
+
+  </style>
+
+  <script src="js/lib/jquery-3.2.1.min.js"></script>
+
+  <script>
+    $(function(){
+
+      $(window).on('resize',function(){
+        var winWidth = $(window).width();
+        var winHeight =$(window).height();
+        var movWidth;
+        var movHeight;
+
+        movWidth = winWidth ;
+        movHeight = winHeight + 250;
+
+
+        $('.video').css({
+          width : movWidth,
+          height :movHeight,
+          'margin-top' : -(movHeight / 2),
+          'margin-left' :-(movWidth / 2)
+        });
+
+      }).resize();
+
+
+    });
+
+
+
+
+
+
+  </script>
+
+</head>
+<body>
+
+<div class="bg-video">
+    <div class="video-wrap">
+      <iframe class="video" src="https://www.youtube.com/embed/5SJvHwfar4M?ecver=2&autoplay=1&controls=0&showinfo=0&rel=0" width="1640" height="1000" frameborder="0"  allowfullscreen></iframe>
+    </div>
+
+    <div class="dimmed"></div>
+</div>
+<!--<div class="text">-->
+  <!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, cupiditate, doloribus ea eius ex molestiae nisi nostrum porro, quidem reiciendis temporibus ullam?-->
+  <!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, cupiditate, doloribus ea eius ex molestiae nisi nostrum porro, quidem reiciendis temporibus ullam?-->
+  <!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, cupiditate, doloribus ea eius ex molestiae nisi nostrum porro, quidem reiciendis temporibus ullam?-->
+  <!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, cupiditate, doloribus ea eius ex molestiae nisi nostrum porro, quidem reiciendis temporibus ullam?-->
+  <!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, cupiditate, doloribus ea eius ex molestiae nisi nostrum porro, quidem reiciendis temporibus ullam?-->
+  <!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, cupiditate, doloribus ea eius ex molestiae nisi nostrum porro, quidem reiciendis temporibus ullam?-->
+  <!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, cupiditate, doloribus ea eius ex molestiae nisi nostrum porro, quidem reiciendis temporibus ullam?-->
+  <!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, cupiditate, doloribus ea eius ex molestiae nisi nostrum porro, quidem reiciendis temporibus ullam?-->
+  <!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, cupiditate, doloribus ea eius ex molestiae nisi nostrum porro, quidem reiciendis temporibus ullam?-->
+  <!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, cupiditate, doloribus ea eius ex molestiae nisi nostrum porro, quidem reiciendis temporibus ullam?-->
+  <!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, cupiditate, doloribus ea eius ex molestiae nisi nostrum porro, quidem reiciendis temporibus ullam?-->
+  <!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, cupiditate, doloribus ea eius ex molestiae nisi nostrum porro, quidem reiciendis temporibus ullam?-->
+  <!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, cupiditate, doloribus ea eius ex molestiae nisi nostrum porro, quidem reiciendis temporibus ullam?-->
+  <!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, cupiditate, doloribus ea eius ex molestiae nisi nostrum porro, quidem reiciendis temporibus ullam?-->
+  <!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, cupiditate, doloribus ea eius ex molestiae nisi nostrum porro, quidem reiciendis temporibus ullam?-->
+  <!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, cupiditate, doloribus ea eius ex molestiae nisi nostrum porro, quidem reiciendis temporibus ullam?-->
+  <!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, cupiditate, doloribus ea eius ex molestiae nisi nostrum porro, quidem reiciendis temporibus ullam?-->
+  <!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, cupiditate, doloribus ea eius ex molestiae nisi nostrum porro, quidem reiciendis temporibus ullam?-->
+  <!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, cupiditate, doloribus ea eius ex molestiae nisi nostrum porro, quidem reiciendis temporibus ullam?-->
+  <!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, cupiditate, doloribus ea eius ex molestiae nisi nostrum porro, quidem reiciendis temporibus ullam?-->
+  <!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, cupiditate, doloribus ea eius ex molestiae nisi nostrum porro, quidem reiciendis temporibus ullam?-->
+  <!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, cupiditate, doloribus ea eius ex molestiae nisi nostrum porro, quidem reiciendis temporibus ullam?-->
+  <!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, cupiditate, doloribus ea eius ex molestiae nisi nostrum porro, quidem reiciendis temporibus ullam?-->
+  <!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, cupiditate, doloribus ea eius ex molestiae nisi nostrum porro, quidem reiciendis temporibus ullam?-->
+  <!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, cupiditate, doloribus ea eius ex molestiae nisi nostrum porro, quidem reiciendis temporibus ullam?-->
+  <!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, cupiditate, doloribus ea eius ex molestiae nisi nostrum porro, quidem reiciendis temporibus ullam?-->
+  <!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, cupiditate, doloribus ea eius ex molestiae nisi nostrum porro, quidem reiciendis temporibus ullam?-->
+  <!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, cupiditate, doloribus ea eius ex molestiae nisi nostrum porro, quidem reiciendis temporibus ullam?-->
+  <!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, cupiditate, doloribus ea eius ex molestiae nisi nostrum porro, quidem reiciendis temporibus ullam?-->
+  <!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, cupiditate, doloribus ea eius ex molestiae nisi nostrum porro, quidem reiciendis temporibus ullam?-->
+  <!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, cupiditate, doloribus ea eius ex molestiae nisi nostrum porro, quidem reiciendis temporibus ullam?-->
+  <!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, cupiditate, doloribus ea eius ex molestiae nisi nostrum porro, quidem reiciendis temporibus ullam?-->
+  <!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, cupiditate, doloribus ea eius ex molestiae nisi nostrum porro, quidem reiciendis temporibus ullam?-->
+  <!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, cupiditate, doloribus ea eius ex molestiae nisi nostrum porro, quidem reiciendis temporibus ullam?-->
+  <!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, cupiditate, doloribus ea eius ex molestiae nisi nostrum porro, quidem reiciendis temporibus ullam?-->
+  <!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, cupiditate, doloribus ea eius ex molestiae nisi nostrum porro, quidem reiciendis temporibus ullam?-->
+  <!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, cupiditate, doloribus ea eius ex molestiae nisi nostrum porro, quidem reiciendis temporibus ullam?-->
+  <!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, cupiditate, doloribus ea eius ex molestiae nisi nostrum porro, quidem reiciendis temporibus ullam?-->
+  <!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, cupiditate, doloribus ea eius ex molestiae nisi nostrum porro, quidem reiciendis temporibus ullam?-->
+  <!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, cupiditate, doloribus ea eius ex molestiae nisi nostrum porro, quidem reiciendis temporibus ullam?-->
+  <!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, cupiditate, doloribus ea eius ex molestiae nisi nostrum porro, quidem reiciendis temporibus ullam?-->
+  <!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, cupiditate, doloribus ea eius ex molestiae nisi nostrum porro, quidem reiciendis temporibus ullam?-->
+
+
+
+<!--</div>-->
+
+
+</body>
+</html>

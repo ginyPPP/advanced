@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <title> video tag</title>
+  <script src="js/lib/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+<!-- <iframe src="주소 ?매개변수&매개변수"> </iframe>-->
+<iframe id="movie" src="https://www.youtube.com/embed/5SJvHwfar4M?ecver=2&enablejsapi=1" width="640" height="360" frameborder="0" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe>
+
+<script>
+  /**
+   * Youtube API 로드
+   */
+
+
+      //동적으로 생성
+  var tag = document.createElement('script');  //createElement() : html 요소를 동적으로 생성시킴 -script 태그를 생성
+  tag.src = "https://www.youtube.com/iframe_api";  //<script src="">과 같은꼴
+
+  //현재 script 태그 앞에 동적으로 생성한 script 태그를 삽입하는 내용
+  var firstScriptTag = document.getElementsByTagName('script')[0];//getElementsByTagName- 태그이름인'script'를 가져와라
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);//firstScriptTag -자바스크립트의 전체를 맨 앞에
+                                        //tag= 위 var tag 해준 값
+
+  /**
+   * onYouTubeIframeAPIReady 함수는 필수로 구현해야 한다.
+   * 플레이어 API에 대한 JavaScript 다운로드 완료 시 API가 이 함수 호출한다.
+   * 페이지 로드 시 표시할 플레이어 개체를 만들어야 한다.
+   */
+  var player;
+  function onYouTubeIframeAPIReady() {
+    //새로운 동영상 이름은 iframe 의 id 와 연결됨
+    player = new YT.Player('movie');
+//      events: {
+//        'onReady': onPlayerReady,               // 플레이어 로드가 완료되고 API 호출을 받을 준비가 될 때마다 실행
+//        'onStateChange': onPlayerStateChange    // 플레이어의 상태가 변경될 때마다 실행
+//      }  //이벤트      :  함수실행   ===>즉 onStateChange 이벤트가 되면 onPlayerStateChange 를 실행하라는 뜻
+
+  }
+
+
+  $('#movie').on('mouseenter',function(){
+    player.playVideo();
+  });
+
+  $('#movie').on('mouseleave',function(){
+    player.pauseVideo();
+  });
+
+</script>
+</body>
+</html>
